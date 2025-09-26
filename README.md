@@ -26,19 +26,6 @@ A comprehensive tmux configuration with modern plugins, optimized for Debian-bas
 
 ## Installation
 
-### Prerequisites
-
-```bash
-# Update package list
-sudo apt update
-
-# Install required packages
-sudo apt install tmux git xclip
-
-# For better clipboard integration (optional)
-sudo apt install xsel
-```
-
 ### Quick Installation
 
 1. **Clone this repository:**
@@ -140,7 +127,7 @@ sudo apt install xsel
 | Key Binding  | Action              |
 | ------------ | ------------------- |
 | `Leader + a` | Mark file/project   |
-| `Leader + e` | Toggle harpoon menu |
+| `Leader + h` | Toggle harpoon menu |
 
 #### Tmux Tea
 
@@ -224,39 +211,6 @@ xclip -selection clipboard -o  # Should output "test"
 2. Reload config: `Leader + r`
 3. Install plugins: `Leader + I`
 4. If issues persist, restart tmux completely: `tmux kill-server && tmux`
-
-### Mouse Not Working
-
-Ensure your terminal emulator supports mouse reporting. Most modern terminals (gnome-terminal, konsole, xterm, etc.) support this by default.
-
-### Session Restore Issues
-
-If tmux-resurrect isn't saving/restoring properly:
-
-1. Check that the save directory exists: `ls ~/.local/share/tmux/resurrect/`
-2. Verify you're using the correct key bindings: `Leader + Alt + s` (save) and `Leader + Alt + r` (restore)
-3. Ensure you have proper permissions to write to the save directory
-
-## Debian-Specific Notes
-
-### Terminal Recommendations
-
-For the best experience on Debian, use:
-
-- **GNOME Terminal** (default on GNOME)
-- **Konsole** (default on KDE)
-- **xterm** (lightweight option)
-- **Alacritty** (modern GPU-accelerated option)
-
-### Performance Optimization
-
-For better performance on older Debian systems:
-
-```bash
-# Add to ~/.tmux.conf for older systems
-set -g status-interval 5  # Reduce status update frequency
-set -g history-limit 5000 # Reduce history if memory is limited
-```
 
 ## Customization
 
